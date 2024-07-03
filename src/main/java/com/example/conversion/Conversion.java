@@ -1,3 +1,4 @@
+// src/main/java/com/example/conversion/Conversion.java
 package com.example.conversion;
 
 public class Conversion {
@@ -8,34 +9,34 @@ public class Conversion {
                 if (toUnit.equals("Kelvin")) {
                     return value + 273.15;
                 } else if (toUnit.equals("Fahrenheit")) {
-                    return value * 9/5 + 32;
+                    return value * 9 / 5 + 32;
                 } else if (toUnit.equals("Rankine")) {
-                    return (value + 273.15) * 9/5;
+                    return (value + 273.15) * 9 / 5;
                 }
                 break;
             case "Kelvin":
                 if (toUnit.equals("Celsius")) {
                     return value - 273.15;
                 } else if (toUnit.equals("Fahrenheit")) {
-                    return (value - 273.15) * 9/5 + 32;
+                    return (value - 273.15) * 9 / 5 + 32;
                 } else if (toUnit.equals("Rankine")) {
-                    return value * 9/5;
+                    return value * 9 / 5;
                 }
                 break;
             case "Fahrenheit":
                 if (toUnit.equals("Celsius")) {
-                    return (value - 32) * 5/9;
+                    return (value - 32) * 5 / 9;
                 } else if (toUnit.equals("Kelvin")) {
-                    return (value - 32) * 5/9 + 273.15;
+                    return (value - 32) * 5 / 9 + 273.15;
                 } else if (toUnit.equals("Rankine")) {
                     return value + 459.67;
                 }
                 break;
             case "Rankine":
                 if (toUnit.equals("Celsius")) {
-                    return (value - 491.67) * 5/9;
+                    return (value - 491.67) * 5 / 9;
                 } else if (toUnit.equals("Kelvin")) {
-                    return value * 5/9;
+                    return value * 5 / 9;
                 } else if (toUnit.equals("Fahrenheit")) {
                     return value - 459.67;
                 }
