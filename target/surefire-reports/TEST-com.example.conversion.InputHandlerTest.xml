@@ -12,7 +12,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="US"/>
     <property name="sun.boot.library.path" value="/opt/homebrew/Cellar/openjdk/22.0.1/libexec/openjdk.jdk/Contents/Home/lib"/>
-    <property name="sun.java.command" value="/Users/paulkiat/Desktop/Systone-Coding-Challenge/target/surefire/surefirebooter7242999195091651313.jar /Users/paulkiat/Desktop/Systone-Coding-Challenge/target/surefire 2024-07-03T11-42-57_195-jvmRun1 surefire10956367565293859195tmp surefire_01444887456405566511tmp"/>
+    <property name="sun.java.command" value="/Users/paulkiat/Desktop/Systone-Coding-Challenge/target/surefire/surefirebooter2849585600621290919.jar /Users/paulkiat/Desktop/Systone-Coding-Challenge/target/surefire 2024-07-03T11-56-33_070-jvmRun1 surefire17626296427585175289tmp surefire_010686645284338088040tmp"/>
     <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="/Users/paulkiat/Desktop/Systone-Coding-Challenge/target/test-classes:/Users/paulkiat/Desktop/Systone-Coding-Challenge/target/classes:/Users/paulkiat/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.7.0/junit-jupiter-api-5.7.0.jar:/Users/paulkiat/.m2/repository/org/apiguardian/apiguardian-api/1.1.0/apiguardian-api-1.1.0.jar:/Users/paulkiat/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/Users/paulkiat/.m2/repository/org/junit/platform/junit-platform-commons/1.7.0/junit-platform-commons-1.7.0.jar:/Users/paulkiat/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.7.0/junit-jupiter-engine-5.7.0.jar:/Users/paulkiat/.m2/repository/org/junit/platform/junit-platform-engine/1.7.0/junit-platform-engine-1.7.0.jar:"/>
@@ -29,7 +29,7 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="apple.awt.application.name" value="ForkedBooter"/>
-    <property name="surefire.real.class.path" value="/Users/paulkiat/Desktop/Systone-Coding-Challenge/target/surefire/surefirebooter7242999195091651313.jar"/>
+    <property name="surefire.real.class.path" value="/Users/paulkiat/Desktop/Systone-Coding-Challenge/target/surefire/surefirebooter2849585600621290919.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.runtime.version" value="22.0.1"/>

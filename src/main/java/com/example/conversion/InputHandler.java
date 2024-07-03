@@ -20,24 +20,24 @@ public class InputHandler {
         try {
             double convertedValue;
 
-            // Check if both the fromUnit and toUnit are temperature units and perform temperature conversion
+            // Determine if the units are temperature units and perform temperature conversion
             if (isTemperatureUnit(fromUnit) && isTemperatureUnit(toUnit)) {
                 convertedValue = conversion.convertTemperature(value, fromUnit, toUnit);
 
-            // Check if both the fromUnit and toUnit are volume units and perform volume conversion
+            // Determine if the units are volume units and perform volume conversion
             } else if (isVolumeUnit(fromUnit) && isVolumeUnit(toUnit)) {
                 convertedValue = conversion.convertVolume(value, fromUnit, toUnit);
 
-            // If units do not match any known types, return "Invalid"
+            // If the units are invalid, return "Invalid"
             } else {
                 return "Invalid";
             }
 
-            // Check the student's response against the converted value
+            // Check if the student's response matches the converted value
             return checkResponse(convertedValue, studentResponse);
 
         } catch (IllegalArgumentException e) {
-            // If an exception is thrown during conversion, return "Invalid"
+            // If an exception occurs during conversion, return "Invalid"
             return "Invalid";
         }
     }
@@ -49,6 +49,7 @@ public class InputHandler {
      * @return     True if the unit is a temperature unit, false otherwise.
      */
     private boolean isTemperatureUnit(String unit) {
+        // Define valid temperature units
         return unit.equals("Celsius") || unit.equals("Kelvin") || unit.equals("Fahrenheit") || unit.equals("Rankine");
     }
 
@@ -59,6 +60,7 @@ public class InputHandler {
      * @return     True if the unit is a volume unit, false otherwise.
      */
     private boolean isVolumeUnit(String unit) {
+        // Define valid volume units
         return unit.equals("liters") || unit.equals("tablespoons") || unit.equals("cubic-inches") || unit.equals("cups")
                 || unit.equals("cubic-feet") || unit.equals("gallons");
     }
@@ -72,6 +74,10 @@ public class InputHandler {
      *                        "Incorrect" if it does not match.
      */
     private String checkResponse(double convertedValue, double studentResponse) {
+        // Check if the student's response is a valid number
+        if (Double.isNaN(studentResponse)) {
+            return "Incorrect";
+        }
         // Round both the converted value and the student's response to one decimal place and compare
         if (Math.round(convertedValue * 10) / 10.0 == Math.round(studentResponse * 10) / 10.0) {
             return "Correct";

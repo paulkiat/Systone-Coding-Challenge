@@ -12,10 +12,10 @@ public class Conversion {
      * @throws IllegalArgumentException if the units are invalid.
      */
     public double convertTemperature(double value, String fromUnit, String toUnit) {
-        // Switch on the fromUnit to determine the conversion logic
+        // Determine the conversion logic based on the source unit
         switch (fromUnit) {
             case "Celsius":
-                // Convert Celsius to the target unit
+                // Convert from Celsius to the target unit
                 if (toUnit.equals("Kelvin")) {
                     return value + 273.15;
                 } else if (toUnit.equals("Fahrenheit")) {
@@ -25,7 +25,7 @@ public class Conversion {
                 }
                 break;
             case "Kelvin":
-                // Convert Kelvin to the target unit
+                // Convert from Kelvin to the target unit
                 if (toUnit.equals("Celsius")) {
                     return value - 273.15;
                 } else if (toUnit.equals("Fahrenheit")) {
@@ -35,7 +35,7 @@ public class Conversion {
                 }
                 break;
             case "Fahrenheit":
-                // Convert Fahrenheit to the target unit
+                // Convert from Fahrenheit to the target unit
                 if (toUnit.equals("Celsius")) {
                     return (value - 32) * 5 / 9;
                 } else if (toUnit.equals("Kelvin")) {
@@ -45,7 +45,7 @@ public class Conversion {
                 }
                 break;
             case "Rankine":
-                // Convert Rankine to the target unit
+                // Convert from Rankine to the target unit
                 if (toUnit.equals("Celsius")) {
                     return (value - 491.67) * 5 / 9;
                 } else if (toUnit.equals("Kelvin")) {
@@ -55,10 +55,10 @@ public class Conversion {
                 }
                 break;
             default:
-                // Throw an exception if the fromUnit is invalid
+                // Throw an exception if the source unit is invalid
                 throw new IllegalArgumentException("Invalid temperature units");
         }
-        // Throw an exception if the toUnit is invalid
+        // Throw an exception if the target unit is invalid
         throw new IllegalArgumentException("Invalid temperature units");
     }
 
@@ -72,10 +72,10 @@ public class Conversion {
      * @throws IllegalArgumentException if the units are invalid.
      */
     public double convertVolume(double value, String fromUnit, String toUnit) {
-        // Switch on the fromUnit to determine the conversion logic
+        // Determine the conversion logic based on the source unit
         switch (fromUnit) {
             case "liters":
-                // Convert liters to the target unit
+                // Convert from liters to the target unit
                 if (toUnit.equals("tablespoons")) {
                     return value * 67.628;
                 } else if (toUnit.equals("cubic-inches")) {
@@ -89,7 +89,7 @@ public class Conversion {
                 }
                 break;
             case "tablespoons":
-                // Convert tablespoons to the target unit
+                // Convert from tablespoons to the target unit
                 if (toUnit.equals("liters")) {
                     return value / 67.628;
                 } else if (toUnit.equals("cubic-inches")) {
@@ -103,7 +103,7 @@ public class Conversion {
                 }
                 break;
             case "cubic-inches":
-                // Convert cubic-inches to the target unit
+                // Convert from cubic-inches to the target unit
                 if (toUnit.equals("liters")) {
                     return value / 61.024;
                 } else if (toUnit.equals("tablespoons")) {
@@ -117,7 +117,7 @@ public class Conversion {
                 }
                 break;
             case "cups":
-                // Convert cups to the target unit
+                // Convert from cups to the target unit
                 if (toUnit.equals("liters")) {
                     return value / 4.227;
                 } else if (toUnit.equals("tablespoons")) {
@@ -131,7 +131,7 @@ public class Conversion {
                 }
                 break;
             case "cubic-feet":
-                // Convert cubic-feet to the target unit
+                // Convert from cubic-feet to the target unit
                 if (toUnit.equals("liters")) {
                     return value * 28.317;
                 } else if (toUnit.equals("tablespoons")) {
@@ -145,7 +145,7 @@ public class Conversion {
                 }
                 break;
             case "gallons":
-                // Convert gallons to the target unit
+                // Convert from gallons to the target unit
                 if (toUnit.equals("liters")) {
                     return value * 3.785;
                 } else if (toUnit.equals("tablespoons")) {
@@ -159,10 +159,10 @@ public class Conversion {
                 }
                 break;
             default:
-                // Throw an exception if the fromUnit is invalid
+                // Throw an exception if the source unit is invalid
                 throw new IllegalArgumentException("Invalid volume units");
         }
-        // Throw an exception if the toUnit is invalid
+        // Throw an exception if the target unit is invalid
         throw new IllegalArgumentException("Invalid volume units");
     }
 }

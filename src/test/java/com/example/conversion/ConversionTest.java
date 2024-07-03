@@ -4,11 +4,14 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class ConversionTest {
+    // Create instances of Conversion and InputHandler to use in the tests
     private final Conversion conversion = new Conversion();
     private final InputHandler inputHandler = new InputHandler();
 
     @Test
     public void testConversionScenarios() {
+        // Test various scenarios for handling input and verifying student responses
+
         // Scenario 1: 84.2 Fahrenheit to Rankine, student response 543.94, expected "Correct"
         assertEquals("Correct", inputHandler.handleInput(84.2, "Fahrenheit", "Rankine", 543.94));
 
@@ -31,22 +34,24 @@ public class ConversionTest {
 
     @Test
     public void testConvertTemperature() {
-        // Test conversion from Celsius
+        // Test the temperature conversion methods
+
+        // Conversion from Celsius to other units
         assertEquals(273.15, conversion.convertTemperature(0, "Celsius", "Kelvin"), 0.01);
         assertEquals(32.0, conversion.convertTemperature(0, "Celsius", "Fahrenheit"), 0.01);
         assertEquals(491.67, conversion.convertTemperature(0, "Celsius", "Rankine"), 0.01);
 
-        // Test conversion from Kelvin
+        // Conversion from Kelvin to other units
         assertEquals(-273.15, conversion.convertTemperature(0, "Kelvin", "Celsius"), 0.01);
         assertEquals(-459.67, conversion.convertTemperature(0, "Kelvin", "Fahrenheit"), 0.01);
         assertEquals(0.0, conversion.convertTemperature(0, "Kelvin", "Rankine"), 0.01);
 
-        // Test conversion from Fahrenheit
+        // Conversion from Fahrenheit to other units
         assertEquals(0.0, conversion.convertTemperature(32, "Fahrenheit", "Celsius"), 0.01);
         assertEquals(273.15, conversion.convertTemperature(32, "Fahrenheit", "Kelvin"), 0.01);
         assertEquals(491.67, conversion.convertTemperature(32, "Fahrenheit", "Rankine"), 0.01);
 
-        // Test conversion from Rankine
+        // Conversion from Rankine to other units
         assertEquals(-273.15, conversion.convertTemperature(0, "Rankine", "Celsius"), 0.01);
         assertEquals(0.0, conversion.convertTemperature(0, "Rankine", "Kelvin"), 0.01);
         assertEquals(-459.67, conversion.convertTemperature(0, "Rankine", "Fahrenheit"), 0.01);
@@ -54,15 +59,19 @@ public class ConversionTest {
 
     @Test
     public void testConvertVolume() {
-        // Test conversion from liters to tablespoons
+        // Test the volume conversion methods
+
+        // Conversion from liters to other units
         assertEquals(67.628, conversion.convertVolume(1, "liters", "tablespoons"), 0.01);
 
-        // Test conversion from gallons to liters
+        // Conversion from gallons to other units
         assertEquals(3.785, conversion.convertVolume(1, "gallons", "liters"), 0.01);
     }
 
     @Test
     public void testTemperatureConversionEdgeCases() {
+        // Test temperature conversion edge cases
+
         // Negative values
         assertEquals(-40.0, conversion.convertTemperature(-40, "Celsius", "Fahrenheit"), 0.01);
         assertEquals(-40.0, conversion.convertTemperature(-40, "Fahrenheit", "Celsius"), 0.01);
@@ -78,6 +87,8 @@ public class ConversionTest {
 
     @Test
     public void testVolumeConversionEdgeCases() {
+        // Test volume conversion edge cases
+
         // Very small numbers
         assertEquals(0.067628, conversion.convertVolume(0.001, "liters", "tablespoons"), 0.00001);
 
@@ -90,6 +101,7 @@ public class ConversionTest {
 
     @Test
     public void testTemperatureConversionPerformance() {
+        // Test the performance of temperature conversions
         for (int i = 0; i < 1000000; i++) {
             assertEquals(273.15, conversion.convertTemperature(0, "Celsius", "Kelvin"), 0.01);
         }
@@ -97,6 +109,7 @@ public class ConversionTest {
 
     @Test
     public void testVolumeConversionPerformance() {
+        // Test the performance of volume conversions
         for (int i = 0; i < 1000000; i++) {
             assertEquals(67.628, conversion.convertVolume(1, "liters", "tablespoons"), 0.01);
         }
