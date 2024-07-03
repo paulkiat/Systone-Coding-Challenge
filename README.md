@@ -63,7 +63,7 @@ This project addresses a unit conversion problem for science teachers. It allows
 
     - To run the application, execute the following command:
     ```bash
-    mvn exec:java
+    mvn exec:java -Dexec.mainClass="com.example.conversion.Main"  
     ```
 
 ## Web Access App
