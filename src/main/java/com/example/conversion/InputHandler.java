@@ -20,11 +20,11 @@ public class InputHandler {
         try {
             double convertedValue;
 
-            // Check if the units are temperature units and perform temperature conversion
+            // Check if both the fromUnit and toUnit are temperature units and perform temperature conversion
             if (isTemperatureUnit(fromUnit) && isTemperatureUnit(toUnit)) {
                 convertedValue = conversion.convertTemperature(value, fromUnit, toUnit);
 
-            // Check if the units are volume units and perform volume conversion
+            // Check if both the fromUnit and toUnit are volume units and perform volume conversion
             } else if (isVolumeUnit(fromUnit) && isVolumeUnit(toUnit)) {
                 convertedValue = conversion.convertVolume(value, fromUnit, toUnit);
 
