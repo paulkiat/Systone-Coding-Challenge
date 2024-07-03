@@ -42,9 +42,33 @@ This project addresses a unit conversion problem for science teachers. It allows
     - How to add new tests: Add test methods to `src/test/java/com/example/conversion/ConversionTest.java`.
    
 
+## Running the Application
+1. **Using Maven Exec Plugin:**
+    - You can run the application using the Maven Exec plugin. Ensure the plugin is added to your `pom.xml` file as shown below:
+
+    ```xml
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>3.0.0</version>
+                <configuration>
+                    <mainClass>com.example.conversion.Main</mainClass>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    ```
+
+    - To run the application, execute the following command:
+    ```bash
+    mvn exec:java
+    ```
+
 ## Web Access App
-1. **Starting the Web Application:**
-    - If applicable, provide instructions on how to start the web server.
+1. **Starting the Web Application (if applicable):**
+    - If a web server is used, provide instructions on how to start it.
     ```bash
     mvn spring-boot:run
     ```
@@ -98,6 +122,50 @@ This project addresses a unit conversion problem for science teachers. It allows
 4. **Add more test cases:**
     - Expand the test coverage to include all possible scenarios.
 
-5. **Implement CI/CD pipeline:**
-    - Set up continuous integration and deployment for automated testing and deployment.
+5. **Implement persistent storage:**
+    - Set up a database or file storage solution to save user inputs and results for future reference.
 
+## CI/CD Pipeline
+The CI/CD pipeline is implemented using GitHub Actions to automate the testing and building process.
+
+### Workflow File
+Create a workflow file `.github/workflows/maven.yml` with the following content:
+
+```yaml
+name: Java CI with Maven
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up JDK 11
+      uses: actions/setup-java@v1
+      with:
+        java-version: '11'
+
+    - name: Cache Maven packages
+      uses: actions/cache@v2
+      with:
+        path: ~/.m2
+        key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+        restore-keys: ${{ runner.os }}-maven
+
+    - name: Install dependencies and test
+      run: mvn clean install
+
+    - name: Run tests
+      run: mvn test
+```
