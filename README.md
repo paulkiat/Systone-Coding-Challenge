@@ -66,16 +66,16 @@ This project addresses a unit conversion problem for science teachers. It allows
 | `├── src`                                        | Root directory for source files       |
 | `│   ├── main`                                   | Main source directory                 |
 | `│   │   └── java`                               | Java source files                     |
-| `│   │       └── com`                            | Package directory                     |
-| `│   │           └── example`                    | Example package directory             |
-| `│   │               └── conversion`             | Conversion package directory          |
-| `│   │                   └── Conversion.java`    | Contains the conversion methods       |
+| `│   │   └── com`                                | Package directory                     |
+| `│   │   └── example`                            | Example package directory             |
+| `│   │   └── conversion`                         | Conversion package directory          |
+| `│   │   └── Conversion.java`                    | Contains the conversion methods       |
 | `│   ├── test`                                   | Test source directory                 |
 | `│   │   └── java`                               | Java test files                       |
-| `│   │       └── com`                            | Package directory                     |
-| `│   │           └── example`                    | Example package directory             |
-| `│   │               └── conversion`             | Conversion test package directory     |
-| `│   │                   └── ConversionTest.java`| Contains the test cases               |
+| `│   │   └── com`                                | Package directory                     |
+| `│   │   └── example`                            | Example package directory             |
+| `│   │   └── conversion`                         | Conversion test package directory     |
+| `│   │   └── ConversionTest.java`                | Contains the test cases               |
 | `├── README.md`                                  | Project documentation                 |
 | `├── pom.xml`                                    | Maven configuration file              |
 
